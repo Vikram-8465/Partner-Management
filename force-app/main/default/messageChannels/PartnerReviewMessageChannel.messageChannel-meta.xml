@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Partner Review Message Channel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Channel for Partner Review messages</description>
+
+    <lightningMessageFields>
+        <fieldName>accountId</fieldName>
+        <description>This is the record Id of selected partner account</description>
+    </lightningMessageFields>
+</MessageChannel>

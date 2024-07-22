@@ -1,0 +1,10 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12">
+            <c-partner-search onsearch={handleSearch}></c-partner-search>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" class="slds-var-m-top_small">
+            <c-partner-search-result partner={partnerType}></c-partner-search-result>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

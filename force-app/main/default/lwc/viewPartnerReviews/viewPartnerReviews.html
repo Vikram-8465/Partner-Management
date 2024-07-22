@@ -1,0 +1,52 @@
+<template>
+    <template if:true={showDetails}>
+        <lightning-card title="Sales Team Reviews">
+            <lightning-layout>
+                <template if:true={partnerReviewsFound}>
+                    <div class="element">
+                        <lightning-layout-item padding="around-small" size="12" small-device-size="12"
+                            large-device-size="12" medium-device-size="12">
+                            <!-- With an avatar -->
+                            <div class="slds-var-p-around_medium lgc-bg">
+                                <lightning-tile label={currentReview.CreatedBy.Name} href="/bruce.html" type="media">
+                                    <lightning-avatar slot="media"
+                                        src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg"
+                                        fallback-icon-name="standard:person_account"
+                                        alternative-text="Sales User"></lightning-avatar>
+                                    <div>
+                                        <p><strong>Partner Business Planning</strong>:
+                                            {currentReview.Partner_Business_Planning__c}</p>
+                                        <p><strong>Partner Business Rating</strong>: {currentReview.Overall_rating__c}
+                                        </p>
+                                        <p><strong>Partner Business Quality</strong>: {currentReview.Partner_Quality__c}
+                                        </p>
+                                        <p><strong>Partner Business Overall Feedback</strong>:</p>
+                                        <br />
+                                        <p>{currentReview.Overall_Feedback__c}</p>
+                                    </div>
+                                </lightning-tile>
+                            </div>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item padding="around-small" size="12" small-device-size="12"
+                            large-device-size="12" medium-device-size="12">
+                            <div class="slds-p-around_medium slds-align_absolute-center">
+                                <lightning-button-icon icon-name="utility:arrow_left" alternative-text="Previous Review"
+                                    title="Previous Review" onclick={previousHandler} variant="brand"
+                                    disabled={isPreviousDisabled}></lightning-button-icon>
+                                <lightning-button-icon icon-name="utility:arrow_right" alternative-text="Next Review"
+                                    title="Next Review" onclick={nextHandler} variant="brand" class="slds-m-left_small"
+                                    disabled={isNextDisabled}></lightning-button-icon>
+                            </div>
+                        </lightning-layout-item>
+                    </div>
+                </template>
+                <template if:false={partnerReviewsFound}>
+                    <div class="slds-align_absolute-center">
+                        Be the first to write a review ... <a href="#" onclick={addReview}>Click here!</a>
+                    </div>
+                </template>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+</template>

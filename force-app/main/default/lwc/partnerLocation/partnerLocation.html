@@ -1,0 +1,12 @@
+<template>
+    <template if:true={isMapAvailable}>
+        <lightning-card title="Partner Location" icon-name="utility:location">
+            <div class="map"></div>
+        </lightning-card>
+    </template>
+    <template if:false={isMapAvailable}>
+        <lightning-card title="Partner Location" icon-name="utility:location">
+            <p>No location data available for this partner.</p>
+        </lightning-card>
+    </template>
+</template>

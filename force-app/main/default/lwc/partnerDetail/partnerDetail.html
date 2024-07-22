@@ -1,0 +1,54 @@
+<template>
+    <template if:true={showDetails}>
+        <div class="partner">
+            <lightning-card title="Partner Detail" icon-name="utility:anchor">
+
+                <!-- show buttons -->
+                <div slot="actions">
+                    <lightning-button label="Add Partner Review" onclick={handleAddPartnerReview}
+                        variant="brand"></lightning-button>
+                    <lightning-button label="Partner POC Location" onclick={handlePartnerPocLocation} variant="brand"
+                        class="slds-var-m-horizontal_small"></lightning-button>
+                    <lightning-button label="Partner Reviews" onclick={handlePartnerReviews} variant="brand"
+                        class="slds-var-m-around_small"></lightning-button>
+
+                </div>
+
+                <!-- details of partner  -->
+                <div class="slds-box">
+                    <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+                        <div class="slds-grid ">
+                            <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                                <lightning-output-field field-name={accountName}></lightning-output-field>
+                                <lightning-output-field field-name={primarypoc}></lightning-output-field>
+                                <lightning-output-field field-name={budget}></lightning-output-field>
+                                <lightning-output-field field-name={salesRevenue}></lightning-output-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                                <lightning-output-field field-name={partnerLongitude}></lightning-output-field>
+                                <lightning-output-field field-name={activepipeline}></lightning-output-field>
+                                <lightning-output-field field-name={accContractStartDate}></lightning-output-field>
+                                <lightning-output-field field-name={contractEnd}></lightning-output-field>
+                                <lightning-output-field field-name={totalTrained}></lightning-output-field>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </div>
+
+            </lightning-card>
+        </div>
+
+        <div class="partner-location">
+            <c-partner-location partner-account-id={recordId}></c-partner-location>
+        </div>
+
+    </template>
+    <template if:false={showDetails}>
+        <lightning-card>
+            <h2 class="slds-text-heading_medium slds-align_absolute-center">Please select a partner</h2>
+        </lightning-card>
+    </template>
+
+
+
+</template>

@@ -1,0 +1,46 @@
+<template>
+    <lightning-card>
+        <lightning-layout size="12" horizontal-align="center" vertical-align="center">
+            <lightning-layout-item size="6" padding="around-medium">
+                <!-- app description -->
+                <p>this is partner search component Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+                    dolore qui perspiciatis architecto placeat nulla. Sed nihil qui voluptatibus, doloremque et nam
+                    obcaecati fugit consequatur! Debitis dicta eum dolorum mollitia sunt animi labore reprehenderit
+                    illum saepe, in quam perspiciatis nobis nesciunt nostrum maxime tempora ipsa amet est numquam at
+                    iusto.</p>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-medium">
+
+                <lightning-layout size="12" multiple-rows horizontal-align="center" vertical-align="center">
+                    <lightning-layout-item size="12" padding="around-small">
+                        <!-- search input -->
+                        <div class="search-partner">
+                            <lightning-combobox name="search" variant="label-hidden" options={searchOptions}
+                                onchange={handleSearchChange} place-holder="Select Partner Type"></lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="12" padding="around-small">
+
+                        <!-- action icons -->
+                        <div class="action-icons slds-text-align_center ">
+                            <lightning-button-icon icon-name="action:add_relationship" variant="brand"
+                                onclick={handleAddRelationship} alternative-text="Add new partnerType"
+                                title="Add new partnerType" name="partnerType">
+                                " </lightning-button-icon>
+                            <lightning-button-icon icon-name="action:new_account" variant="brand"
+                                onclick={handleAddRelationship} alternative-text="Add new account"
+                                title="Add new account" class="slds-var-m-left_small" name="account">
+                                " </lightning-button-icon>
+                            <lightning-button-icon icon-name="action:new_contact" variant="brand"
+                                onclick={handleAddRelationship} alternative-text="Add new partner contact"
+                                title="Add new partner contact" class="slds-var-m-left_small" name="contact">
+                            </lightning-button-icon>
+                        </div>
+
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
